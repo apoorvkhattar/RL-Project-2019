@@ -1,6 +1,8 @@
 # RL-Project-2019
 Reimplementation of RL-GAN-Net: A Reinforcement Learning Agent Controlled GAN Network for Real-Time Point Cloud Shape Completion (https://arxiv.org/pdf/1904.12304v1.pdf)
 
+This is the official repository of the paper can be found here: https://github.com/iSarmad/RL-GAN-Net
+
 ## Dataset
 The point cloud dataset is publicly available and can be downloaded from the following link: https://github.com/optas/latent_3d_points
 In our experiments, we work on a subset of 5000 point clouds for which we have provided the numpy array containing the path for each point cloud (available here: https://drive.google.com/drive/folders/12tcCWpOsPM06u79WIyFt2uJfBkXh1ZcP?usp=sharing). After downloading the dataset, only the point clouds available in this numpy array have been used for training and testing.
