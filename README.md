@@ -1,5 +1,5 @@
 # RL-Project-2019
-Reimplementation of RL-GAN-Net: A Reinforcement Learning Agent Controlled GAN Network for Real-Time Point Cloud Shape Completion (https://arxiv.org/pdf/1904.12304v1.pdf)
+Reimplementation of RL-GAN-Net: A Reinforcement Learning Agent Controlled GAN Network for Real-Time Point Cloud Shape Completion (https://arxiv.org/pdf/1904.12304v1.pdf) Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2019
 
 This is the official repository of the paper can be found here: https://github.com/iSarmad/RL-GAN-Net
 
