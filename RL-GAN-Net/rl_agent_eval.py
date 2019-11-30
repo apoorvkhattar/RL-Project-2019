@@ -396,7 +396,7 @@ weights_gen = './gan_out/2019-11-29 17:33:15.146770z5/models/980_gen_.pt'
 weight_disc = './gan_out/2019-11-29 17:33:15.146770z5/models/980_disc_.pt'
 weight_ddpg = './335000_ddpg_.pt'
 
-max_action = 1
+max_action = 2
 z_dim = 5
 
 
