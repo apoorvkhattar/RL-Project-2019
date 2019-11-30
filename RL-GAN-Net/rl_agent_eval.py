@@ -394,7 +394,7 @@ weights_ae = './ae_out_copy/2019-11-27 01:31:11.870769/models/990_ae_.pt'
 # weight_disc = './gan_out/2019-11-27 16:35:38.423591/models/720_disc_.pt'
 weights_gen = './gan_out/2019-11-29 17:33:15.146770z5/models/980_gen_.pt'
 weight_disc = './gan_out/2019-11-29 17:33:15.146770z5/models/980_disc_.pt'
-weight_ddpg = './335000_ddpg.pt'
+weight_ddpg = './335000_ddpg_.pt'
 
 max_action = 1
 z_dim = 5
@@ -414,6 +414,10 @@ discriminator.load_state_dict(torch.load(weight_disc))
 
 ddpg = DDPG(max_action).to(device)
 ddpg.load_state_dict(torch.load(weight_ddpg))
+
+autoencoder.eval()
+generator.eval()
+discriminator.eval()
 
 DATA_DIR = '../latent_3d_points/data/shape_net_core_uniform_samples_2048/'
 list_point_clouds = np.load('./list_point_noisy.npy')
@@ -539,3 +543,6 @@ for i, data in enumerate(train_dataloader):
     fig.savefig(OUTPUTS_DIR+'/{}_{}_{}.png'.format(tsteps, i, 'ae_out'))
 
     plt.close('all')
+
+    if i > 2:
+        break
