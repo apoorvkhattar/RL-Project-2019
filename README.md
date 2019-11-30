@@ -15,5 +15,5 @@ The complete code for dataloader, generator, discriminator models and training i
 The pre-trained weights of the generator and discriminator are available here: https://drive.google.com/drive/folders/1BnpPHKXBdtJrH2_Xxl0oA8m-sM8MlCVm?usp=sharing
 
 ## Training of RL-Agent
-The complete code for actor, critic networks, DDPG and training code is present in the 'rl_agent.ipynb'. Some results and reward plots for the agent are present in the results folder for reference.
+The complete code for actor, critic networks, DDPG and training code is present in the 'rl_agent_classes_only'. Some results and reward plots for the agent are present in the results folder for reference.
 The pre-trained weights of the actor and critic are available here: 
