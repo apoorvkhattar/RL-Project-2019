@@ -16,4 +16,4 @@ The pre-trained weights of the generator and discriminator are available here: h
 
 ## Training of RL-Agent
 The complete code for actor, critic networks, DDPG and training code is present in the 'rl_agent_classes_only'. Some results and reward plots for the agent are present in the results folder for reference.
-The pre-trained weights of the actor and critic are available here: 
+The pre-trained weights of the actor and critic are available here: https://drive.google.com/drive/folders/1lYKPY0sfpBpLYvMowh3MvBqYBO1mpi6N?usp=sharing
