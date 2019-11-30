@@ -401,7 +401,7 @@ weights_ae = './ae_out_copy/2019-11-27 01:31:11.870769/models/990_ae_.pt'
 weights_gen = './gan_out/2019-11-29 17:33:15.146770z5/models/980_gen_.pt'
 weight_disc = './gan_out/2019-11-29 17:33:15.146770z5/models/980_disc_.pt'
 
-max_action = 1
+max_action = 2
 z_dim = 5
 
 
@@ -556,10 +556,10 @@ for tsteps in range(0,int(max_steps)):
         action_t = -2 * max_action * torch.rand(1, z_dim) + max_action
         action_t = action_t.to(device)
     else:
-        action_t = (ddpg.get_optimal_action(state_t).detach() + 0.5 * torch.randn(1, z_dim).to(device)).clamp(-max_action, max_action)
-        if tsteps % 10000 == 0:
-            max_action += 1
-            ddpg.actor.max_action = max_action
+        action_t = (ddpg.get_optimal_action(state_t).detach() + 0.1 * torch.randn(1, z_dim).to(device)).clamp(-max_action, max_action)
+#         if tsteps % 10000 == 0:
+#             max_action += 1
+#             ddpg.actor.max_action = max_action
 
 
     next_state, _ = generator(action_t)
@@ -569,9 +569,9 @@ for tsteps in range(0,int(max_steps)):
     reward_disc, _ = discriminator(next_state)
     reward_disc = torch.mean(reward_disc)
     # reward = reward_gfv * 0.01 + reward_chamfer * 5 + reward_disc * 0.05 + (-torch.norm(action_t)) * 0.1
-    # reward = reward_gfv * 0.1 + reward_chamfer * 5.0 + reward_disc * 0.1 + (-torch.norm(action_t)) * 0.1
+    reward = reward_gfv * 0.1 + reward_chamfer * 5.0 + reward_disc * 0.1 + (-torch.norm(action_t)) * 0.1
     # reward = reward_gfv * 0.1 + reward_chamfer * 5.0 + reward_disc * 0.1 + (-torch.norm(action_t)) * 0.05
-    reward = reward_gfv * 0.1 + reward_chamfer * 5.0 + reward_disc * 0.1
+#     reward = reward_gfv * 0.1 + reward_chamfer * 5.0 + reward_disc * 0.1
     
     ddpg.replay_buffer.add_to_buffer(state_t, action_t, reward, next_state)
 
