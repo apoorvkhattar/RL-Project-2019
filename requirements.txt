@@ -50,7 +50,6 @@ pandocfilters==1.4.2
 parso==0.5.1
 pexpect==4.7.0
 pickleshare==0.7.5
-Pillow==6.2.1
 prometheus-client==0.7.1
 prompt-toolkit==2.0.10
 protobuf==3.10.0
@@ -73,8 +72,6 @@ Send2Trash==1.5.0
 six==1.13.0
 tensorboard==2.0.1
 tensorboardX==1.9
-tensorflow-estimator==2.0.1
-tensorflow-gpu==2.0.1
 termcolor==1.1.0
 terminado==0.8.3
 testpath==0.4.4
